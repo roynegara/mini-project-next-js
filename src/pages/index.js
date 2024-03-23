@@ -1,8 +1,15 @@
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [name, setName] = useState("");
+  const router = useRouter();
+
+  const handleRedirectToProductPage = () => {
+    router.push(`/product/${name}`);
+  }
+
   return (
     <div>
       <ul>
@@ -29,6 +36,11 @@ export default function Home() {
         <Link href={`/product/${name}`}>
           <button>halaman produk</button>
         </Link>
+      </div>
+
+      <div>
+        
+        <button onClick={handleRedirectToProductPage}>halaman produk</button>
       </div>
     </div>
   );

@@ -25,7 +25,8 @@ export default function Home({ foods }) {
   return (
     <div>
       {foods.map((food) => (
-        <div key={food.id}>
+          <div key={food.id}>
+          <h1>ID Makanan : {food.id}</h1>
           <h1>Nama Makanan : {food.name}</h1>
           <h1>Deskripsi Makanan : {food.description}</h1>
           <img width={200} src={food.imageUrl} alt={food.name} />

@@ -7,11 +7,10 @@ export default function Home() {
 
   const getFoods = async () => {
     try {
-      const response = await axios.get('https://api-bootcamp.do.dibimbing.id/api/v1/foods', {
+      const response = await axios.get(`https://api-bootcamp.do.dibimbing.id/api/v1/foods/${router.query.id}`, {
         headers: { apiKey: 'w05KkI9AWhKxzvPFtXotUva-' }
       });
       setData(response.data.data);
-      console.log('respose', response.data.data);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching foods:', error);
@@ -23,6 +22,8 @@ export default function Home() {
     getFoods();
   }, []);
 
+    if 
+    
   if (loading) {
     return <div>Loading...</div>;
   }

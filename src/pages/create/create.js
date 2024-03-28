@@ -6,7 +6,7 @@ export default function CreateFoodPage() {
   const { pos, loading } = usePost();
 
   const handleCreate = async ({ name, imageUrl, description, ingredients }) => {
-    pos('/create-food', { name, imageUrl, description, ingredients });
+    pos("/create-food", { name, imageUrl, description, ingredients });
   };
 
   return (
@@ -15,8 +15,6 @@ export default function CreateFoodPage() {
     </FoodLayout>
   );
 }
-
-
 
 // import axios from "axios";
 // import { useState } from "react";
@@ -69,6 +67,5 @@ export default function CreateFoodPage() {
 //               >Submit</button>
 //     </form>
 //     );
-    
-    
+
 // }

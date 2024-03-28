@@ -5,9 +5,9 @@ import { useState } from "react";
 export default function useDelete() {
   const [loading, setLoading] = useState();
 
-  const del = async (url, body) => {
+  const del = async (url) => {
     setLoading(true);
-    await axios.delete(`https://api-bootcamp.do.dibimbing.id/api/v1${url}`, body, {
+    await axios.delete(`https://api-bootcamp.do.dibimbing.id/api/v1${url}`, {
       headers: {
         "Content-Type": " application/json",
         apiKey: "w05KkI9AWhKxzvPFtXotUva-",

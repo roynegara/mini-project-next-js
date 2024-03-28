@@ -3,7 +3,6 @@ export default function FoodForm({
   defaultNama,
   defaultUrlGambar,
   defaultDeskripsi,
-  // onSubmitFood,
   onSubmit,
   defaultIngredients,
   loading,
@@ -20,7 +19,6 @@ export default function FoodForm({
       .split(", ")
       .map((ingredient) => ingredient.trim());
 
-    // onSubmitFood({ name, imageUrl, description, ingredients });
     onSubmit({ name, imageUrl, description, ingredients });
   };
 

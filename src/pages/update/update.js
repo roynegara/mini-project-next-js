@@ -1,5 +1,5 @@
 import axios from "axios";
-import FoodForm from "@/components/FoodForm";
+import FoodForm from "@/components/FoodFormDelete";
 import usePost from "@/hooks/usePost";
 import FoodLayout from "@/layout/FoodLayout";
 

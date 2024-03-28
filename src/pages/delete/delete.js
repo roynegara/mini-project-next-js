@@ -1,4 +1,4 @@
-import FoodForm from "@/components/FoodForm";
+import FoodForm from "@/components/FoodFormDelete";
 import axios from "axios";
 import useDelete from "@/hooks/useDelete";
 import FoodLayout from "@/layout/FoodLayout";

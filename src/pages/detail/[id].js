@@ -1,8 +1,9 @@
 import axios from "axios";
 import FoodLayout from "@/layout/FoodLayout";
 import FoodForm from "@/components/FoodForm";
+import FoodFormDelete from "@/components/FoodFormDelete";
 import usePost from "@/hooks/usePost";
-// import useDelete from "@/hooks/useUpdate";
+import useDelete from "@/hooks/useDelete";
 import { useRouter } from "next/router";
 
 export async function getServerSideProps(context) {
@@ -16,7 +17,7 @@ export async function getServerSideProps(context) {
 export default function FoodDetailPage({ food }) {
   const router = useRouter();
   const { loading, pos } = usePost();
-  // const { loading : loadingDelete , del} = useDelete();
+  const { loading: loadingDelete, del } = useDelete();
 
   const handleBack = () => {
     router.push("/");
@@ -30,7 +31,7 @@ export default function FoodDetailPage({ food }) {
   //   router.push("/update/update/" + food.id);
   // };
   const handleUpdateFood = async ({ name, imageUrl, description, ingredients }) => {
-    pos(`/update-food/${food.id}`, {
+    pos(`/update-food/${food?.id}`, {
       name,
       imageUrl,
       description,
@@ -38,8 +39,9 @@ export default function FoodDetailPage({ food }) {
     });
   };
 
-
-  const
+  const handleDeleteFood = async () => {
+    del(`/delete-food/${food?.id}`);
+  };
 
   return (
     <div>
@@ -60,10 +62,11 @@ export default function FoodDetailPage({ food }) {
             defaultIngredients={food.ingredients}
             loading={loading}
             onSubmit={handleUpdateFood}
-            // onSubmit={handleDeleteFood}
           />
 
+          <FoodFormDelete title={`Delete ${food.name} ?`} onDelete={handleDeleteFood} />
           <button onClick={handleBack}>Back to Home</button>
+
           {/* <button onClick={handleToDeletePage}>Delete This Menu</button>
           <button onClick={handleToUpdatePage}>Edit This Menu</button> */}
         </div>

@@ -5,9 +5,9 @@ import { useState } from "react";
 export default function usePost() {
   const [loading, setLoading] = useState();
 
-  const post = async (url, body) => {
+  const del = async (url, body) => {
     setLoading(true);
-    await axios.post(`https://api-bootcamp.do.dibimbing.id/api/v1${url}`, body, {
+    await axios.delete(`https://api-bootcamp.do.dibimbing.id/api/v1${url}`, body, {
       headers: {
         "Content-Type": " application/json",
         apiKey: "w05KkI9AWhKxzvPFtXotUva-",
@@ -18,5 +18,5 @@ export default function usePost() {
     setLoading(false);
   };
 
-  return { post, loading };
+  return { del, loading };
 }

@@ -23,13 +23,7 @@ export default function FoodDetailPage({ food }) {
     router.push("/");
   };
 
-  // const handleToDeletePage = () => {
-  //   router.push("/delete/delete");
-  // };
 
-  // const handleToUpdatePage = () => {
-  //   router.push("/update/update/" + food.id);
-  // };
   const handleUpdateFood = async ({ name, imageUrl, description, ingredients }) => {
     pos(`/update-food/${food?.id}`, {
       name,
@@ -66,9 +60,7 @@ export default function FoodDetailPage({ food }) {
 
           <FoodFormDelete title={`Delete ${food.name} ?`} onDelete={handleDeleteFood} />
           <button onClick={handleBack}>Back to Home</button>
-
-          {/* <button onClick={handleToDeletePage}>Delete This Menu</button>
-          <button onClick={handleToUpdatePage}>Edit This Menu</button> */}
+         
         </div>
       </FoodLayout>
     </div>

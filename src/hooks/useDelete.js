@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 
 // hooks: "useXXXX"
-export default function usePost() {
+export default function useDelete() {
   const [loading, setLoading] = useState();
 
   const del = async (url, body) => {

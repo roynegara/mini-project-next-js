@@ -2,6 +2,7 @@ import axios from "axios";
 import FoodLayout from "@/layout/FoodLayout";
 import FoodForm from "@/components/FoodForm";
 import usePost from "@/hooks/usePost";
+// import useDelete from "@/hooks/useUpdate";
 import { useRouter } from "next/router";
 
 export async function getServerSideProps(context) {
@@ -14,7 +15,8 @@ export async function getServerSideProps(context) {
 
 export default function FoodDetailPage({ food }) {
   const router = useRouter();
-  const { loading, post } = usePost();
+  const { loading, pos } = usePost();
+  // const { loading : loadingDelete , del} = useDelete();
 
   const handleBack = () => {
     router.push("/");
@@ -28,13 +30,16 @@ export default function FoodDetailPage({ food }) {
   //   router.push("/update/update/" + food.id);
   // };
   const handleUpdateFood = async ({ name, imageUrl, description, ingredients }) => {
-    post(`/update-food/${food.id}`, {
+    pos(`/update-food/${food.id}`, {
       name,
       imageUrl,
       description,
       ingredients,
     });
   };
+
+
+  const
 
   return (
     <div>
@@ -46,7 +51,7 @@ export default function FoodDetailPage({ food }) {
           <h1>{`Bahan-bahannya terbuat dari : ${food.ingredients.join(", ")}`}</h1>
           <h1>{`Rating menu : ${food.rating}⭐`}</h1>
           <h1>{`Total yang menyukai :  ${food.totalLikes}👍`}</h1>
-          
+
           <FoodForm
             title={`Update ${food.name}`}
             defaultNama={food.name}
@@ -54,7 +59,8 @@ export default function FoodDetailPage({ food }) {
             defaultDeskripsi={food.description}
             defaultIngredients={food.ingredients}
             loading={loading}
-            onSubmitFood={handleUpdateFood}
+            onSubmit={handleUpdateFood}
+            // onSubmit={handleDeleteFood}
           />
 
           <button onClick={handleBack}>Back to Home</button>

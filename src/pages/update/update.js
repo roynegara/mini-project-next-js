@@ -12,10 +12,10 @@ export async function getServerSideProps(context) {
 }
 
 export default function FoodDetailPage({ food }) {
-  const { loading, post } = usePost();
+  const { loading, pos } = usePost();
 
   const handleToUpdateFood = async ({ name, imageUrl, description, ingredients }) => {
-    post(`/update-food/${food.id}`, { name, imageUrl, description, ingredients });
+    pos(`/update-food/${food.id}`, { name, imageUrl, description, ingredients });
   };
 
   return (

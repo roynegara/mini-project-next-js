@@ -3,10 +3,10 @@ import usePost from "@/hooks/usePost";
 import FoodLayout from "@/layout/FoodLayout";
 
 export default function CreateFoodPage() {
-  const { post, loading } = usePost();
+  const { pos, loading } = usePost();
 
   const handleCreate = async ({ name, imageUrl, description, ingredients }) => {
-    post("/create-food", { name, imageUrl, description, ingredients });
+    pos('/create-food', { name, imageUrl, description, ingredients });
   };
 
   return (

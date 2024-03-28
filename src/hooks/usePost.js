@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function usePost() {
   const [loading, setLoading] = useState();
 
-  const post = async (url, body) => {
+  const pos = async (url, body) => {
     setLoading(true);
     await axios.post(`https://api-bootcamp.do.dibimbing.id/api/v1${url}`, body, {
       headers: {
@@ -18,5 +18,5 @@ export default function usePost() {
     setLoading(false);
   };
 
-  return { post, loading };
+  return { pos, loading };
 }

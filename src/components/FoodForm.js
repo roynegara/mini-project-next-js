@@ -3,7 +3,8 @@ export default function FoodForm({
   defaultNama,
   defaultUrlGambar,
   defaultDeskripsi,
-  onSubmitFood,
+  // onSubmitFood,
+  onSubmit,
   defaultIngredients,
   loading,
 }) {
@@ -14,9 +15,13 @@ export default function FoodForm({
     const name = formData.get("namaMakanan");
     const imageUrl = formData.get("gambarMakanan");
     const description = formData.get("deskripsiMakanan");
-    const ingredients = formData.get("ingredients").split(", ").map((ingredient) => ingredient.trim());
+    const ingredients = formData
+      .get("ingredients")
+      .split(", ")
+      .map((ingredient) => ingredient.trim());
 
-    onSubmitFood({ name, imageUrl, description, ingredients });
+    // onSubmitFood({ name, imageUrl, description, ingredients });
+    onSubmit({ name, imageUrl, description, ingredients });
   };
 
   return (

@@ -82,8 +82,8 @@ export default function FoodDetailPage({ food }) {
 
           <FoodFormDelete
             title={`Delete ${food.name} ?`}
-            onDelete={handleDeleteFood}
             loading={loadingDelete}
+            onDelete={handleDeleteFood}
           />
           <button onClick={handleBack}>Back to Home</button>
          

@@ -5,6 +5,7 @@ import FoodFormDelete from "@/components/FoodFormDelete";
 import usePost from "@/hooks/usePost";
 import useDelete from "@/hooks/useDelete";
 import { useRouter } from "next/router";
+// import { useEffect } from "react";
 
 export async function getServerSideProps(context) {
   //   const resp = await axios.get(`https://api-bootcamp.do.dibimbing.id/api/v1/foods/${context.query.id}`, {
@@ -18,6 +19,25 @@ export default function FoodDetailPage({ food }) {
   const router = useRouter();
   const { loading, pos } = usePost();
   const { loading: loadingDelete, del } = useDelete();
+  
+  // const refreshPage = () => {
+  //   router.replace(router.asPath);
+  // }
+
+//   useEffect(() => {
+//     if (!loading && pos.succes) {
+//       refreshPage();
+//     }
+//   } , [loading, pos.succes]);
+
+// useEffect (() => {
+//   if (!loadingDelete && del.succes) {
+//     router.push("/");
+//   }
+// } , [loadingDelete, del.succes]);
+
+
+
 
   const handleBack = () => {
     router.push("/");
@@ -31,10 +51,12 @@ export default function FoodDetailPage({ food }) {
       description,
       ingredients,
     });
+    router.push(`/detail/${food?.id}`);
   };
 
   const handleDeleteFood = async () => {
     del(`/delete-food/${food?.id}`);
+    router.push("/");
   };
 
   return (
@@ -58,7 +80,11 @@ export default function FoodDetailPage({ food }) {
             onSubmit={handleUpdateFood}
           />
 
-          <FoodFormDelete title={`Delete ${food.name} ?`} onDelete={handleDeleteFood} />
+          <FoodFormDelete
+            title={`Delete ${food.name} ?`}
+            onDelete={handleDeleteFood}
+            loading={loadingDelete}
+          />
           <button onClick={handleBack}>Back to Home</button>
          
         </div>

@@ -15,7 +15,10 @@ export default function CreateFoodPage() {
   return (
     <FoodLayout>
       <div className="create">
-        <FoodForm title="Buat Makanan" onSubmit={handleCreate} loading={loading} />
+        <div className="create-form">
+        <FoodForm  title="Buat Makanan" onSubmit={handleCreate} loading={loading} />
+        </div>
+        
       </div>            
     </FoodLayout>
   );

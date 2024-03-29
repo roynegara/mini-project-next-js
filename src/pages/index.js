@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import FoodLayout from "@/layout/FoodLayout";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -41,26 +42,34 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <div>
-        <h1>Menu did not in the list?</h1>
-        <button onClick={() => handleMenuCreate()}>Create a Menu Here</button>
-      </div>
-
-      {data.map((food) => (
-        <div key={food.id}>
-          <h1>ID Makanan : {food.id}</h1>
-          <h1>Nama Makanan : {food.name}</h1>
-          <h1>Deskripsi Makanan : {food.description}</h1>
-          <h1>Bahan Makanan : {food.ingredients.join(", ")} </h1>
-          <img width={200} src={food.imageUrl} alt={food.name} />
-          <button onClick={() => handleMenuDetail(food.id)}>Menu detail</button>
-
-          <h1>Rating : {food.rating}⭐</h1>
-
-          <h1>Total Like : {food.totalLikes}👍 </h1>
+    <FoodLayout>
+      <div className="menu">
+        <div>
+          <h1 className="menu-title">Ini adalah Daftar Menu yang Tersedia</h1>
+          <h1 className="menu-title-btn">
+            Jika anda ingin menambahkan menu silahkan klik tombol<span> </span>
+            <button onClick={() => handleMenuCreate()}> Tambah Menu</button>
+          </h1>
         </div>
-      ))}
-    </div>
+
+        <div className="menu-content">
+          {data.map((food) => (
+            <div className="menu-card" key={food.id}>
+              {/* <p>ID Makanan : {food.id}</p> */}
+              <h1 className="menu-card-title">Menu : {food.name}</h1>
+              <p>Deskripsi : {food.description}</p>
+              <p>Ingredients : {food.ingredients.join(", ")} </p>
+              <img src={food.imageUrl} alt={food.name} />
+
+              <div className="menu-card-footer">
+                <button onClick={() => handleMenuDetail(food.id)}>Menu detail</button>
+                <p>Rating : {food.rating}⭐</p>
+                <p>Total Like : {food.totalLikes}👍 </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </FoodLayout>
   );
 }

@@ -4,21 +4,47 @@ import FoodLayout from "@/layout/FoodLayout";
 import { useRouter } from "next/router";
 
 export default function CreateFoodPage() {
-  const { pos, loading } = usePost();
   const router = useRouter();
+  const { pos, loading } = usePost();
 
-  const handleCreate = async ({ name, imageUrl, description, ingredients }) => {
-    pos("/create-food", { name, imageUrl, description, ingredients });
-router.push('/')
+  const handleCreate = async ({ name, imageUrl, description, ingredients, rating, totalLikes }) => {
+    pos("/create-food", { name, imageUrl, description, ingredients, rating, totalLikes });
+    router.push(``);
   };
 
   return (
     <FoodLayout>
-      <FoodForm title="Buat Makanan" onSubmit={handleCreate} loading={loading} />
+      <div className="create">
+        <FoodForm title="Buat Makanan" onSubmit={handleCreate} loading={loading} />
+      </div>            
     </FoodLayout>
   );
 }
 
+// ========================
+
+// import FoodForm from "@/components/FoodForm";
+// import usePost from "@/hooks/usePost";
+// import FoodLayout from "@/layout/FoodLayout";
+// import { useRouter } from "next/router";
+
+// export default function CreateFoodPage() {
+//   const { pos, loading } = usePost();
+//   const router = useRouter();
+
+//   const handleCreate = async ({ name, imageUrl, description, ingredients }) => {
+//     pos("/create-food", { name, imageUrl, description, ingredients });
+// router.push('/')
+//   };
+
+//   return (
+//     <FoodLayout>
+//       <FoodForm title="Buat Makanan" onSubmit={handleCreate} loading={loading} />
+//     </FoodLayout>
+//   );
+// }
+
+// ========================
 // import axios from "axios";
 // import { useState } from "react";
 // import FoodForm from "@/components/FoodForm";

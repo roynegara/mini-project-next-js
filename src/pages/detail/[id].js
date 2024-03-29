@@ -5,6 +5,7 @@ import FoodFormDelete from "@/components/FoodFormDelete";
 import usePost from "@/hooks/usePost";
 import useDelete from "@/hooks/useDelete";
 import { useRouter } from "next/router";
+
 // import { useEffect } from "react";
 
 export async function getServerSideProps(context) {
@@ -19,37 +20,35 @@ export default function FoodDetailPage({ food }) {
   const router = useRouter();
   const { loading, pos } = usePost();
   const { loading: loadingDelete, del } = useDelete();
-  
+
   // const refreshPage = () => {
   //   router.replace(router.asPath);
   // }
 
-//   useEffect(() => {
-//     if (!loading && pos.succes) {
-//       refreshPage();
-//     }
-//   } , [loading, pos.succes]);
+  //   useEffect(() => {
+  //     if (!loading && pos.succes) {
+  //       refreshPage();
+  //     }
+  //   } , [loading, pos.succes]);
 
-// useEffect (() => {
-//   if (!loadingDelete && del.succes) {
-//     router.push("/");
-//   }
-// } , [loadingDelete, del.succes]);
-
-
-
+  // useEffect (() => {
+  //   if (!loadingDelete && del.succes) {
+  //     router.push("/");
+  //   }
+  // } , [loadingDelete, del.succes]);
 
   const handleBack = () => {
     router.push("/");
   };
 
-
-  const handleUpdateFood = async ({ name, imageUrl, description, ingredients }) => {
+  const handleUpdateFood = async ({ name, imageUrl, description, ingredients, rating, totalLikes }) => {
     pos(`/update-food/${food?.id}`, {
       name,
       imageUrl,
       description,
       ingredients,
+      rating,
+      totalLikes,
     });
     router.push(`/detail/${food?.id}`);
   };
@@ -60,8 +59,8 @@ export default function FoodDetailPage({ food }) {
   };
 
   return (
-    <div>
-      <FoodLayout>
+    <FoodLayout>
+      <div>
         <img width={200} src={food?.imageUrl} alt={food.name} />
         <div>
           <h1>{`${food.name}`}</h1>
@@ -76,20 +75,17 @@ export default function FoodDetailPage({ food }) {
             defaultUrlGambar={food.imageUrl}
             defaultDeskripsi={food.description}
             defaultIngredients={food.ingredients}
+            defaultRating={food.rating}
+            defaultTotalLikes={food.totalLikes}
             loading={loading}
             onSubmit={handleUpdateFood}
           />
 
-          <FoodFormDelete
-            title={`Delete ${food.name} ?`}
-            loading={loadingDelete}
-            onDelete={handleDeleteFood}
-          />
+          <FoodFormDelete title={`Delete ${food.name} ?`} loading={loadingDelete} onDelete={handleDeleteFood} />
           <button onClick={handleBack}>Back to Home</button>
-         
         </div>
-      </FoodLayout>
-    </div>
+      </div>
+    </FoodLayout>
   );
 }
 

@@ -1,11 +1,11 @@
 import FoodLayout from "@/layout/FoodLayout";
 
-export default function About() {
+export default function Home() {
   return (
     <FoodLayout>
       <div>
-        <h1>About</h1>
-        <p>This is the about page</p>
+        <h1>Selamat Datang di Website Roy Bayu Negara</h1>
+        <h1>Ini adalah Home</h1>
       </div>
     </FoodLayout>
   );

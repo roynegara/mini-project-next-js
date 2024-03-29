@@ -16,24 +16,206 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
-.idFoodForm {
+body {
+  background: #081b29;
+  color: #ededed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+/* Navbar Start */
+button {
+  cursor: pointer;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
   display: flex;
+  padding: 20px 10%;
+  z-index: 2;
+  background: #07278d;
+}
+
+.logo a {
+  text-decoration: none;
+  position: relative;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ededed;
+}
+.navbar-nav {
+  display: flex;
+}
+
+.navbar-nav a {
+  text-decoration: none;
+  color: #ededed;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 35px;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    display: none;
+
+    flex-direction: column;
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 500px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+
+  .navbar-nav a {
+    margin: 10px 0;
+  }
+
+  .navbar-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ededed;
+  }
+}
+
+.navbar-nav a:hover {
+  color: #b3b3b3;
+}
+
+/* Navbar End */
+/* ================================== */
+/* Index Start / menu */
+.menu {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("https://img.freepik.com/free-vector/gradient-blue-dynamic-lines-background_52683-67204.jpg?t=st=1711678568~exp=1711682168~hmac=37605e09647ab82dc29327169d50036cb7314491d9e4b4b6358bd75b42309abb&w=1380")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px 10%;
+}
+
+.menu-title {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  /* font-size: 2rem; */
+  font-weight: 700;
+  width: 700px;
+  background: #07278d;
+  color: #d3d3d3;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.menu-title-btn {
+  background: #07278d;
+  color: #d3d3d3;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 15px;
+}
+
+.menu button {
+  color: #333;
+  background: #d3d3d3;
+  margin: none;
+  padding: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.menu button:hover {
+  background: #007ed5;
+  color: #d3d3d3;
+}
+
+.menu-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.menu-card {
+  background: #07278d;
+  color: #d3d3d3;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.009);
+  }
+}
+
+.menu-card-title {
+  font-weight: 700;
+}
+
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
   flex-direction: column;
 }
+
+.menu img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+/* Index End / menu */

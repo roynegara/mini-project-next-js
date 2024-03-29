@@ -1,9 +1,10 @@
+import Navbar from "@/components/Navbar"
 
 export default function FoodLayout({ children }) {
     
     return (
         <div>
-            <header>Nice Food</header>
+            <Navbar />
             <div>{children}</div>
         </div>
     )

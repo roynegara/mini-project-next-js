@@ -154,9 +154,9 @@ button {
   padding: 15px;
 }
 
-.menu button {
-  color: #333;
-  background: #d3d3d3;
+.menu-title-btn button {
+  color: #d3d3d3;
+  background: red;
   margin: none;
   padding: none;
   border-radius: 10px;
@@ -164,7 +164,7 @@ button {
 }
 
 .menu button:hover {
-  background: #007ed5;
+  background: green;
   color: #d3d3d3;
 }
 
@@ -187,6 +187,7 @@ button {
   justify-content: center;
   align-items: center;
   text-align: center;
+
   transition: all 0.3s ease-in-out;
   &:hover {
     transform: scale(1.009);
@@ -204,6 +205,13 @@ button {
   flex-direction: column;
 }
 
+.menu-card-footer button {
+  color: #d3d3d3;
+  background: red;
+  border-radius: 9px;
+  padding: 5px;
+}
+
 .menu img {
   width: 300px;
   height: 300px;
@@ -212,6 +220,8 @@ button {
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -245,4 +255,79 @@ button {
   align-items: center;
   margin-top: 10px; */
 }
+
+.create-form button {
+  color: #d3d3d3;
+  background: red;
+  border-radius: 9px;
+  padding: 5px;
+  margin: 5px;
+
+  &:hover {
+    color: #d3d3d3;
+    background: green;
+  }
+}
 /* Create End */
+
+/* ============================== */
+/* Detail Start */
+.detail {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("https://img.freepik.com/free-vector/gradient-blue-dynamic-lines-background_52683-67204.jpg?t=st=1711678568~exp=1711682168~hmac=37605e09647ab82dc29327169d50036cb7314491d9e4b4b6358bd75b42309abb&w=1380")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px 10%;
+}
+
+.detail-image {
+  width: 300px;
+  height: 300px;
+  margin-top: 100px;
+}
+
+.detail-card {
+  display: flex;
+  justify-content: center; /* Untuk memusatkan kolom */
+}
+
+.detail-content {
+  display: flex;
+  justify-content: space-between; /* Untuk memisahkan kedua kolom */
+}
+
+.detail-left,
+.detail-right {
+  width: 45%; /* Atur lebar kolom sesuai kebutuhan */
+}
+
+
+.detail-card,
+.detail-form-update,
+.detail-form-delete {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail-form-update button {
+  color: #d3d3d3;
+  background: red;
+  border-radius: 9px;
+  padding: 5px;
+  margin: 5px;
+}
+.detail-form-delete button {
+  color: #d3d3d3;
+  background: red;
+  border-radius: 9px;
+  padding: 5px;
+  margin: 5px;
+}
+/* Detail End */

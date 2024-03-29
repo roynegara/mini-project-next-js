@@ -58,31 +58,78 @@ export default function FoodDetailPage({ food }) {
     router.push("/");
   };
 
+  //   return (
+  //     <FoodLayout>
+  //       <div className="detail">
+  //         <div className="detail-card">
+  //           <div>
+  //             <img className="detail-image" src={food?.imageUrl} alt={food.name} />
+  //             <h1>{`${food.name}`}</h1>
+  //             <h1>{`Deskripsi menu : ${food.description}`}</h1>
+  //             <h1>{`Bahan-bahannya terbuat dari : ${food.ingredients.join(", ")}`}</h1>
+  //             <h1>{`Rating menu : ${food.rating}⭐`}</h1>
+  //             <h1>{`Total yang menyukai :  ${food.totalLikes}👍`}</h1>
+  //           </div>
+
+  //           <div>
+  //             <div className="detail-form-update">
+  //               <FoodForm
+  //                 title={`Update ${food.name}`}
+  //                 defaultNama={food.name}
+  //                 defaultUrlGambar={food.imageUrl}
+  //                 defaultDeskripsi={food.description}
+  //                 defaultIngredients={food.ingredients}
+  //                 defaultRating={food.rating}
+  //                 defaultTotalLikes={food.totalLikes}
+  //                 loading={loading}
+  //                 onSubmit={handleUpdateFood}
+  //               />
+  //             </div>
+
+  //             <div className="detail-form-delete">
+  //               <FoodFormDelete title={`Delete ${food.name} ?`} loading={loadingDelete} onDelete={handleDeleteFood} />
+  //               <button onClick={handleBack}>Back to Home</button>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </FoodLayout>
+  //   );
+  // }
+
   return (
     <FoodLayout>
-      <div>
-        <img width={200} src={food?.imageUrl} alt={food.name} />
-        <div>
-          <h1>{`${food.name}`}</h1>
-          <h1>{`Deskripsi menu : ${food.description}`}</h1>
-          <h1>{`Bahan-bahannya terbuat dari : ${food.ingredients.join(", ")}`}</h1>
-          <h1>{`Rating menu : ${food.rating}⭐`}</h1>
-          <h1>{`Total yang menyukai :  ${food.totalLikes}👍`}</h1>
-
-          <FoodForm
-            title={`Update ${food.name}`}
-            defaultNama={food.name}
-            defaultUrlGambar={food.imageUrl}
-            defaultDeskripsi={food.description}
-            defaultIngredients={food.ingredients}
-            defaultRating={food.rating}
-            defaultTotalLikes={food.totalLikes}
-            loading={loading}
-            onSubmit={handleUpdateFood}
-          />
-
-          <FoodFormDelete title={`Delete ${food.name} ?`} loading={loadingDelete} onDelete={handleDeleteFood} />
-          <button onClick={handleBack}>Back to Home</button>
+      <div className="detail">
+        <div className="detail-card">
+          <div className="detail-content">
+            <div className="detail-left">
+              <img className="detail-image" src={food?.imageUrl} alt={food.name} />
+              <h1>{`${food.name}`}</h1>
+              <h1>{`Deskripsi menu : ${food.description}`}</h1>
+              <h1>{`Bahan-bahannya terbuat dari : ${food.ingredients.join(", ")}`}</h1>
+              <h1>{`Rating menu : ${food.rating}⭐`}</h1>
+              <h1>{`Total yang menyukai :  ${food.totalLikes}👍`}</h1>
+            </div>
+            <div className="detail-right">
+              <div className="detail-form-update">
+                <FoodForm
+                  title={`Update ${food.name}`}
+                  defaultNama={food.name}
+                  defaultUrlGambar={food.imageUrl}
+                  defaultDeskripsi={food.description}
+                  defaultIngredients={food.ingredients}
+                  defaultRating={food.rating}
+                  defaultTotalLikes={food.totalLikes}
+                  loading={loading}
+                  onSubmit={handleUpdateFood}
+                />
+              </div>
+              <div className="detail-form-delete">
+                <FoodFormDelete title={`Delete ${food.name} ?`} loading={loadingDelete} onDelete={handleDeleteFood} />
+                <button onClick={handleBack}>Back to Home</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </FoodLayout>

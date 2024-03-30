@@ -50,52 +50,13 @@ export default function FoodDetailPage({ food }) {
       rating,
       totalLikes,
     });
-    router.push(`/detail/${food?.id}`);
+    router.push(`/detail/${food.id}`);
   };
 
   const handleDeleteFood = async () => {
     del(`/delete-food/${food?.id}`);
     router.push("/");
   };
-
-  //   return (
-  //     <FoodLayout>
-  //       <div className="detail">
-  //         <div className="detail-card">
-  //           <div>
-  //             <img className="detail-image" src={food?.imageUrl} alt={food.name} />
-  //             <h1>{`${food.name}`}</h1>
-  //             <h1>{`Deskripsi menu : ${food.description}`}</h1>
-  //             <h1>{`Bahan-bahannya terbuat dari : ${food.ingredients.join(", ")}`}</h1>
-  //             <h1>{`Rating menu : ${food.rating}⭐`}</h1>
-  //             <h1>{`Total yang menyukai :  ${food.totalLikes}👍`}</h1>
-  //           </div>
-
-  //           <div>
-  //             <div className="detail-form-update">
-  //               <FoodForm
-  //                 title={`Update ${food.name}`}
-  //                 defaultNama={food.name}
-  //                 defaultUrlGambar={food.imageUrl}
-  //                 defaultDeskripsi={food.description}
-  //                 defaultIngredients={food.ingredients}
-  //                 defaultRating={food.rating}
-  //                 defaultTotalLikes={food.totalLikes}
-  //                 loading={loading}
-  //                 onSubmit={handleUpdateFood}
-  //               />
-  //             </div>
-
-  //             <div className="detail-form-delete">
-  //               <FoodFormDelete title={`Delete ${food.name} ?`} loading={loadingDelete} onDelete={handleDeleteFood} />
-  //               <button onClick={handleBack}>Back to Home</button>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </FoodLayout>
-  //   );
-  // }
 
   return (
     <FoodLayout>
@@ -126,7 +87,9 @@ export default function FoodDetailPage({ food }) {
               </div>
               <div className="detail-form-delete">
                 <FoodFormDelete title={`Delete ${food.name} ?`} loading={loadingDelete} onDelete={handleDeleteFood} />
-                <button onClick={handleBack}>Back to Home</button>
+                <button className="detail-back-btn" onClick={handleBack}>
+                  {loading ? "Loading..." : "Kembali"}
+                </button>
               </div>
             </div>
           </div>
@@ -135,6 +98,46 @@ export default function FoodDetailPage({ food }) {
     </FoodLayout>
   );
 }
+
+// ========================
+//   return (
+//     <FoodLayout>
+//       <div className="detail">
+//         <div className="detail-card">
+//           <div>
+//             <img className="detail-image" src={food?.imageUrl} alt={food.name} />
+//             <h1>{`${food.name}`}</h1>
+//             <h1>{`Deskripsi menu : ${food.description}`}</h1>
+//             <h1>{`Bahan-bahannya terbuat dari : ${food.ingredients.join(", ")}`}</h1>
+//             <h1>{`Rating menu : ${food.rating}⭐`}</h1>
+//             <h1>{`Total yang menyukai :  ${food.totalLikes}👍`}</h1>
+//           </div>
+
+//           <div>
+//             <div className="detail-form-update">
+//               <FoodForm
+//                 title={`Update ${food.name}`}
+//                 defaultNama={food.name}
+//                 defaultUrlGambar={food.imageUrl}
+//                 defaultDeskripsi={food.description}
+//                 defaultIngredients={food.ingredients}
+//                 defaultRating={food.rating}
+//                 defaultTotalLikes={food.totalLikes}
+//                 loading={loading}
+//                 onSubmit={handleUpdateFood}
+//               />
+//             </div>
+
+//             <div className="detail-form-delete">
+//               <FoodFormDelete title={`Delete ${food.name} ?`} loading={loadingDelete} onDelete={handleDeleteFood} />
+//               <button onClick={handleBack}>Back to Home</button>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </FoodLayout>
+//   );
+// }
 
 // ========================
 

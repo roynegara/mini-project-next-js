@@ -60,10 +60,10 @@ export default function FoodForm({
       
 
       <button
-        type="submit"
-        disabled={loading}
-        className={`${loading ? "bg-gray-500" : "bg-blue-500"} p-1 rounded-full`}>
-        {title}
+        type="onSubmit"
+        
+        >
+        { loading ? "Loading..." : title }
       </button>
     </form>
   );

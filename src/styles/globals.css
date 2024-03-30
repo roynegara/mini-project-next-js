@@ -14,7 +14,7 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} 
 
 @layer utilities {
   .text-balance {
@@ -80,40 +80,6 @@ button {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .navbar-nav {
-    display: none;
-
-    flex-direction: column;
-    position: absolute;
-    top: 80%;
-    left: 15%;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    width: 500px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    backdrop-filter: blur(20px);
-    border-radius: 10px;
-    padding: 5px;
-  }
-
-  .navbar-nav.active {
-    display: flex;
-  }
-
-  .navbar-nav a {
-    margin: 10px 0;
-  }
-
-  .navbar-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #ededed;
-  }
-}
-
 .navbar-nav a:hover {
   color: #b3b3b3;
 }
@@ -161,11 +127,11 @@ button {
   padding: none;
   border-radius: 10px;
   padding: 5px;
-}
 
-.menu button:hover {
-  background: green;
-  color: #d3d3d3;
+  &:hover {
+    background: green;
+    color: #d3d3d3;
+  }
 }
 
 .menu-content {
@@ -187,11 +153,10 @@ button {
   justify-content: center;
   align-items: center;
   text-align: center;
-
   transition: all 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.009);
-  }
+}
+.menu-card:hover {
+  transform: scale(1.009);
 }
 
 .menu-card-title {
@@ -211,6 +176,10 @@ button {
   border-radius: 9px;
   padding: 5px;
 }
+.menu-card-footer button:hover {
+  background: green;
+  color: #d3d3d3;
+}
 
 .menu img {
   width: 300px;
@@ -223,10 +192,9 @@ button {
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
+}
+.menu img:hover {
+  transform: scale(1.05);
 }
 /* Index End / menu */
 
@@ -262,11 +230,10 @@ button {
   border-radius: 9px;
   padding: 5px;
   margin: 5px;
-
-  &:hover {
-    color: #d3d3d3;
-    background: green;
-  }
+}
+.create-form button:hover {
+  color: #d3d3d3;
+  background: green;
 }
 /* Create End */
 
@@ -306,19 +273,19 @@ button {
   display: flex;
   justify-content: center;
   margin-top: 100px;
-  border: solid 1px black;
+  /* border: solid 1px black; */
 }
 
 .detail-content {
   display: flex;
   justify-content: space-between;
-  border: solid 1px red;
+  /* border: solid 1px red; */
 }
 
 .detail-left,
 .detail-right {
   width: 45%;
-  border: solid 1px #d3d3d3;
+  /* border: solid 1px #d3d3d3; */
 }
 
 .detail-card,
@@ -332,12 +299,17 @@ button {
 }
 
 .detail-form-update button {
-  color: #d3d3d3;
-  background: red;
+  color: #2b2b2b;
+  background: rgb(255, 217, 0);
   border-radius: 9px;
   padding: 5px;
   margin: 5px;
 }
+.detail-form-update button:hover {
+  background: green;
+  color: #d3d3d3;
+}
+
 .detail-form-delete button {
   color: #d3d3d3;
   background: red;
@@ -345,4 +317,56 @@ button {
   padding: 5px;
   margin: 5px;
 }
+.detail-form-delete button:hover {
+  background: darkred;
+  color: #fff;
+}
+
+.detail-back-btn {
+  color: #fff;
+  background: rgb(0, 71, 65);
+  border-radius: 9px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.detail-back-btn:hover {
+  background: rgb(128, 0, 122);
+  color: #d3d3d3;
+}
 /* Detail End */
+
+/*  =============   MEDIA  ================  */
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    display: none;
+
+    flex-direction: column;
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 500px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+
+  .navbar-nav a {
+    margin: 10px 0;
+  }
+
+  .navbar-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ededed;
+  }
+}

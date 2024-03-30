@@ -9,7 +9,7 @@ export default function CreateFoodPage() {
 
   const handleCreate = async ({ name, imageUrl, description, ingredients, rating, totalLikes }) => {
     pos("/create-food", { name, imageUrl, description, ingredients, rating, totalLikes });
-    router.push(``);
+    router.push(`/`);
   };
 
   return (

@@ -4,7 +4,7 @@ export default function Contact() {
 
     return (
         <FoodLayout>
-            <div>
+            <div className="contact"> 
                 <h1>Silakan menghubungi kami</h1>
             </div>
         </FoodLayout>

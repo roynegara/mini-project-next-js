@@ -14,7 +14,7 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-} 
+}
 
 @layer utilities {
   .text-balance {
@@ -335,6 +335,24 @@ button {
   color: #d3d3d3;
 }
 /* Detail End */
+
+/* Home Contact About Start */
+.home {
+  margin-top: 100px;
+}
+
+.about {
+  margin-top: 100px;
+}
+
+.contact {
+  margin-top: 100px;
+}
+/* Home Contact About End */
+
+.footer {
+  
+}
 
 /*  =============   MEDIA  ================  */
 @media screen and (max-width: 768px) {

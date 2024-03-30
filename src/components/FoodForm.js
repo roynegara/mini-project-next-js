@@ -9,10 +9,10 @@ export default function FoodForm({
   defaultRating,
   defaultTotalLikes,
 }) {
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(e.currentTarget);
     const name = formData.get("namaMakanan");
     const imageUrl = formData.get("gambarMakanan");
     const description = formData.get("deskripsiMakanan");
@@ -22,7 +22,6 @@ export default function FoodForm({
       .map((ingredient) => ingredient.trim());
     const rating = formData.get("ratingMakanan");
     const totalLikes = formData.get("totalLikesMakanan");
-    
 
     onSubmit({ name, imageUrl, description, ingredients, rating, totalLikes });
   };
@@ -51,20 +50,14 @@ export default function FoodForm({
         name="ingredients"
         className="text-black"
         placeholder="ingredients pakai (,) koma"></input>
-      
+
       <label>Rating:</label>
       <input defaultValue={defaultRating} name="ratingMakanan" className="text-black" placeholder="1-5" />
 
       <label>Total Likes:</label>
       <input defaultValue={defaultTotalLikes} name="totalLikesMakanan" className="text-black" placeholder="0" />
-      
 
-      <button
-        type="onSubmit"
-        
-        >
-        { loading ? "Loading..." : title }
-      </button>
+      <button type="onSubmit">{loading ? "Loading..." : title}</button>
     </form>
   );
 }

@@ -338,20 +338,47 @@ button {
 
 /* Home Contact About Start */
 .home {
-  margin-top: 100px;
+  margin-top: 70px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("https://img.freepik.com/free-vector/gradient-blue-dynamic-lines-background_52683-67204.jpg?t=st=1711678568~exp=1711682168~hmac=37605e09647ab82dc29327169d50036cb7314491d9e4b4b6358bd75b42309abb&w=1380")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px 10%;
 }
 
 .about {
-  margin-top: 100px;
+  margin-top: 70px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("https://img.freepik.com/free-vector/gradient-blue-dynamic-lines-background_52683-67204.jpg?t=st=1711678568~exp=1711682168~hmac=37605e09647ab82dc29327169d50036cb7314491d9e4b4b6358bd75b42309abb&w=1380")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px 10%;
 }
 
 .contact {
-  margin-top: 100px;
+  margin-top: 70px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("https://img.freepik.com/free-vector/gradient-blue-dynamic-lines-background_52683-67204.jpg?t=st=1711678568~exp=1711682168~hmac=37605e09647ab82dc29327169d50036cb7314491d9e4b4b6358bd75b42309abb&w=1380")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px 10%;
 }
 /* Home Contact About End */
 
 .footer {
-  
+  text-align: center;
 }
 
 /*  =============   MEDIA  ================  */

@@ -5,7 +5,7 @@ export default function About() {
     <FoodLayout>
       <div className="about">
         <h1>About</h1>
-        <p>This is the about page</p>
+        <p>Kami menyediakan menu makanan terlengkap</p>
       </div>
     </FoodLayout>
   );
